@@ -30,3 +30,6 @@ texture = ExtResource("2_k5jxj")
 shape = SubResource("CircleShape2D_q765i")
 
 [node name="Node" type="Node" parent="."]
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

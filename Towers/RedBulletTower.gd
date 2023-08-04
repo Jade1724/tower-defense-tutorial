@@ -1,11 +1,18 @@
 extends StaticBody2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+var Bullet = preload("res://Towers/RedBullet.gd")
+var bullet_damage = 5
+var path_name
+var curr_targets = []
+var curr
+
+
+
+func _on_tower_body_entered(body):
+	if "SoldierA" in body.name:
+		pass
+
+
+func _on_tower_body_exited(body):
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
