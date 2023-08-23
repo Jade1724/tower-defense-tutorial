@@ -8,6 +8,10 @@ var curr_targets = []
 var curr
 
 
+func _process(delta):
+	if is_instance_valid(curr):
+		self.look_at(curr.global_position)
+
 
 func _on_tower_body_entered(body):
 	if "SoldierA" in body.name:
@@ -38,4 +42,4 @@ func _on_tower_body_entered(body):
 		
 		
 func _on_tower_body_exited(body):
-	pass # Replace with function body.
+	curr_targets = get_node("Tower").get_overlapping_bodies()
