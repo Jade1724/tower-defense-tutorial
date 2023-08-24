@@ -13,3 +13,5 @@ script = ExtResource("1_mcxv7")
 position = Vector2(128, 128)
 scale = Vector2(3.4, 3.4)
 texture = ExtResource("2_c2cr6")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

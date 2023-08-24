@@ -10,6 +10,7 @@ offset_right = 3584.0
 offset_bottom = 2048.0
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 577.0
