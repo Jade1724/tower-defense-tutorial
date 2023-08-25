@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dt5mci8w856je" path="res://assets/kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="2_c2cr6"]
 
 [node name="RedTowerPanel" type="Panel"]
-custom_minimum_size = Vector2(240, 240)
-offset_right = 256.0
-offset_bottom = 256.0
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
 script = ExtResource("1_mcxv7")
 
 [node name="TowerDefenseTile250" type="Sprite2D" parent="."]
-position = Vector2(128, 128)
-scale = Vector2(3.4, 3.4)
+position = Vector2(40, 40)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_c2cr6")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -8,15 +8,19 @@
 offset_left = 2944.0
 offset_right = 3584.0
 offset_bottom = 2048.0
+tooltip_text = "Buy this tower"
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 577.0
-offset_bottom = 1984.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
+vertical = true
 
 [node name="RedTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("1_pvl3j")]
 layout_mode = 2
