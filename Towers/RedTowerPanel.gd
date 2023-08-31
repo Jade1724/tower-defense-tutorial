@@ -14,16 +14,25 @@ func _on_gui_input(event):
 		# left click down drag
 		if get_child_count() > 1:
 			get_child(1).global_position = event.global_position
-				
+			
+			var map_path = get_tree().get_root().get_node("Main/TileMap")
+			var tile = map_path.local_to_map(get_global_mouse_position())
+			curr_tile = map_path.get_cell_atlas_coords(0, tile, false)
+			if curr_tile == Vector2i(4, 5):
+				get_child(1).get_node("Area").modulate = Color(0, 255, 0)
+			else:
+				get_child(1).get_node("Area").modulate = Color(255, 255, 255)
+			
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		# left click up
 		if get_child_count() > 1:
-				get_child(1).queue_free()
+			get_child(1).queue_free()
 		if event.global_position.x * 3 <= 2944:
-			var path = get_tree().get_root().get_node("Main/Towers")
-			path.add_child(temp_tower)
-			temp_tower.global_position = event.global_position * 3
-			temp_tower.get_node("Area").hide()
+			if curr_tile == Vector2i(4, 5):
+				var path = get_tree().get_root().get_node("Main/Towers")
+				path.add_child(temp_tower)
+				temp_tower.global_position = event.global_position * 3
+				temp_tower.get_node("Area").hide()
 	else:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
