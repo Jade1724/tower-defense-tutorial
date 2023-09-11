@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu1q7xold45aj"]
+[gd_scene load_steps=8 format=3 uid="uid://bu1q7xold45aj"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_ylyqo"]
 [ext_resource type="Texture2D" uid="uid://dt5mci8w856je" path="res://assets/kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="2_k5jxj"]
@@ -15,6 +15,32 @@ corner_radius_top_left = 450
 corner_radius_top_right = 450
 corner_radius_bottom_right = 450
 corner_radius_bottom_left = 450
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56h0e"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.894118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.192157, 0.396078, 0.8, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5dd2"]
+bg_color = Color(0, 0.670588, 0.796078, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0, 0.913725, 0.913725, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="RedBulletTower" type="StaticBody2D"]
 script = ExtResource("1_ylyqo")
@@ -45,6 +71,27 @@ offset_top = -400.0
 offset_right = 400.0
 offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5dqpy")
+
+[node name="Upgrade" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="Upgrade"]
+offset_left = -572.0
+offset_top = 81.0
+offset_right = 4.0
+offset_bottom = 273.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56h0e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Upgrade/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="Upgrade/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5dd2")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
