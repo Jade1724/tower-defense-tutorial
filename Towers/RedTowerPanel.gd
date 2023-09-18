@@ -19,9 +19,9 @@ func _on_gui_input(event):
 			var tile = map_path.local_to_map(get_global_mouse_position())
 			curr_tile = map_path.get_cell_atlas_coords(0, tile, false)
 			if curr_tile == Vector2i(4, 5):
-				get_child(1).get_node("Area").modulate = Color(0, 255, 0)
+				get_child(1).get_node("Area").modulate = Color(0, 255, 0, 0.3)
 			else:
-				get_child(1).get_node("Area").modulate = Color(255, 255, 255)
+				get_child(1).get_node("Area").modulate = Color(255, 255, 255, 0.3)
 			
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		# left click up
