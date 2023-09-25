@@ -13,12 +13,13 @@ func _physics_process(delta):
 		if path_spawner_node.get_child(path).name == path_name:
 			target = path_spawner_node.get_child(path).get_child(0).get_child(0).global_position
 	
-	velocity = global_position.direction_to(target)*SPEED
+	if (target):
+		velocity = global_position.direction_to(target)*SPEED
+		look_at(target)
+		move_and_slide()
+	else:
+		queue_free()
 	
-	look_at(target)
-	
-	move_and_slide()
-
 
 func _on_area_2d_body_entered(body):
 	if "Soldier" in body.name:
